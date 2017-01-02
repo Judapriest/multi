@@ -1,0 +1,7 @@
+bsk.content:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\bsk\Controller\BskController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'

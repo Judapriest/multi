@@ -1,0 +1,6 @@
+name: Bsk Module
+description: Custom module for black snake karate club.
+package: Custom
+type: module
+version: 1.0
+core: 8.x
