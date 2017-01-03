@@ -2,3 +2,7 @@ services:
   title.config_manager:
     class: Drupal\title\BundleConfigManager
     arguments: ['@entity.manager']
+  title.route_subscriber:
+    class: Drupal\title\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

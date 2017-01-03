@@ -95,14 +95,6 @@ function title_preprocess_node(&$variables) {
     $variables['content']['title'] = $variables['label'];
     // The only way to hide the title in the core node template.
     $variables['page'] = TRUE;
-    // Since titles are rendered in a block, they are pulled out of the page
-    // and rendered, setting #printed to TRUE.
-    // @see \Drupal\Core\Entity\Controller\EntityViewController::buildTitle.
-    if ($variables['view_mode'] == 'full' && isset($variables['content']['title'])) {
-      // @todo, find a way to deal with titles on full page views now that
-      // the title is in a block.
-      // $variables['content']['title']['#printed'] = FALSE;
-    }
   }
 }
 
