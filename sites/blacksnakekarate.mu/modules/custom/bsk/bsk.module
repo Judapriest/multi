@@ -28,12 +28,16 @@ phrases and it\'ll do the rest.</p>
   }
 }
 
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
 function bsk_node_view(&$build, $entity, $display, $view_mode) {
-  // Only do the extra work if the component is configured to be displayed.
-  // This assumes a 'mymodule_addition' extra field has been defined for the
-  // entity bundle in hook_entity_extra_field_info().
 
-  if ($view_mode === 'full') {
-    ksm($entity);
+  if ($view_mode === 'teaser' && $entity->bundle() === 'personne') {
+    // Fetch the value of field_couleur_ceinture. 
+    $class = $entity->get('field_couleur_ceinture')->value;
+    // Add class dynamically, since the image shloud have different effect
+    // depending on the class.
+    $build['field_profil']['#attributes']['class'][] = $class;
   }
 }
